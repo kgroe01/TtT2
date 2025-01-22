@@ -1,7 +1,7 @@
 ---
-title: "Contact"
+title: "Login"
 author: "Katelyn Groe"
-date: "2025-01-22"
+date: "2025-01-21"
 output:
   html_document:
     css: style.css
@@ -9,15 +9,14 @@ output:
     toc: false
     includes:
       in_header: Friv.html
-    
+
 ---
 
+<!-- Navigation Bar -->
 <nav>
   <a href="index.html">Home</a>
   <a href="contact.html">Contact</a>
-  <a href="Login.html">Log In</a>
 </nav>
 
+# Log in page
 
-
-## This is where the contact information would be

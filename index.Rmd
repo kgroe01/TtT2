@@ -7,6 +7,8 @@ output:
     css: style.css
     theme: null
     toc: false
+    includes:
+      in_header: Friv.html
 
 ---
 
@@ -14,17 +16,25 @@ output:
 <nav>
   <a href="index.html">Home</a>
   <a href="contact.html">Contact</a>
+  <a href="Login.html">Log In</a>
 </nav>
 
-## Welcome to My Website
 
-Here are some links to navigate my website:
+<p style="margin-bottom: 20px;">
 
-- [Contact](contact.html)
+# Welcome to My Website
 
 
-This is a sample static website created using R Markdown.
+This is a static website created using R Markdown.  
 
-Here's a quick example of a plot:
-```{r example-plot, echo=TRUE}
-plot(cars)
+<p> 
+## Modules -  
+- [Module 1](Module1.html)
+- [Module 2](Module1.html)
+- [Module 3](Module1.html)
+- [Module 4](Module1.html)
+- [Module 5](Module1.html)
+
+
+
+

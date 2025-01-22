@@ -1,5 +1,5 @@
 ---
-title: "Contact"
+title: "Module1"
 author: "Katelyn Groe"
 date: "2025-01-22"
 output:
@@ -9,15 +9,11 @@ output:
     toc: false
     includes:
       in_header: Friv.html
-    
 ---
 
 <nav>
   <a href="index.html">Home</a>
   <a href="contact.html">Contact</a>
-  <a href="Login.html">Log In</a>
 </nav>
 
-
-
-## This is where the contact information would be
+## This is where Module 1 stuff would be

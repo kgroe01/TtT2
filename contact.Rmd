@@ -1,0 +1,19 @@
+---
+title: "Contact"
+author: "Katelyn Groe"
+date: "2025-01-22"
+output:
+  html_document:
+    css: style.css
+    theme: null
+    toc: false
+---
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+## About Me
+
+This is the "About" page. Add your details here.

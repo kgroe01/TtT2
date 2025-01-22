@@ -1,0 +1,30 @@
+---
+title: "Title Page"
+author: "Katelyn Groe"
+date: "2025-01-21"
+output:
+  html_document:
+    css: style.css
+    theme: null
+    toc: false
+
+---
+
+<!-- Navigation Bar -->
+<nav>
+  <a href="index.html">Home</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+## Welcome to My Website
+
+Here are some links to navigate my website:
+
+- [Contact](contact.html)
+
+
+This is a sample static website created using R Markdown.
+
+Here's a quick example of a plot:
+```{r example-plot, echo=TRUE}
+plot(cars)

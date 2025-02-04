@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Katelyn Groe" />
+
+<meta name="date" content="2025-01-21" />
+
+<title>Login</title>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Login</h1>
+<h4 class="author">Katelyn Groe</h4>
+<h4 class="date">2025-01-21</h4>
+
+
+
+<nav>
+<a href="index.html">Home</a> <a href="contact.html">Contact</a>
+</nav>
+<div id="log-in-page" class="section level1">
+<h1>Log in Page</h1>
+<p>I am 80% sure that I could figure out how to have each teacher have a
+username and password.</p>
+<p>That way only the teachers that have gone through the training will
+have access to the material.</p>
+<p>Once they log in, they will be automatically brought to <a
+href="Modules.html">this page.</a></p>
+<p>test</p>
+<!-- Load Auth0 and authentication script -->
+<script src="https://cdn.auth0.com/js/auth0-spa-js/1.22/auth0-spa-js.production.js"></script>
+<script src="auth.js"></script>
+<button onclick="login()">
+Login
+</button>
+<button onclick="logout()">
+Logout
+</button>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

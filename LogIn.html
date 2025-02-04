@@ -96,17 +96,14 @@ if (window.hljs) {
 <nav>
 <a href="index.html">Home</a> <a href="contact.html">Contact</a>
 </nav>
-<p style="margin-bottom: 20px;">
 <div id="log-in-page" class="section level1">
-<h1>Log in page</h1>
+<h1>Log in Page</h1>
 <p>I am 80% sure that I could figure out how to have each teacher have a
 username and password.</p>
 <p>That way only the teachers that have gone through the training will
-have access to the material</p>
-<p>Of course teachers could share their username and password with
-teachers that had not gone through the training but this would keep the
-honest teachers out</p>
+have access to the material.</p>
 <p>Once they log in, they will be automatically brought to <a href="Modules.html">this page.</a></p>
+<!-- Load Firebase SDK (Use Correct Scripts) -->
 <script>/**
  * @license
  * Copyright 2017 Google LLC
@@ -2635,38 +2632,27 @@ export { FirebaseError, SDK_VERSION, DEFAULT_ENTRY_NAME as _DEFAULT_ENTRY_NAME, 
 //# sourceMappingURL=firebase-auth.js.map
 </script>
 <script>
-  // Load .env file
-  fetch(".env")
-    .then(response => response.text())
-    .then(text => {
-      const env = {};
-      text.split("\\n").forEach(line => {
-        const [key, value] = line.split("=");
-        if (key && value) {
-          env[key.trim()] = value.trim();
-        }
-      });
-
-      // Firebase Configuration using Environment Variables
+  document.addEventListener("DOMContentLoaded", function() {
+      // ✅ Use Hardcoded Firebase Config (Replace with Your Own Values)
       const firebaseConfig = {
-        apiKey: env.FIREBASE_API_KEY,
-        authDomain: env.FIREBASE_AUTH_DOMAIN,
-        projectId: env.FIREBASE_PROJECT_ID,
-        storageBucket: env.FIREBASE_STORAGE_BUCKET,
-        messagingSenderId: env.FIREBASE_MESSAGING_SENDER_ID,
-        appId: env.FIREBASE_APP_ID
+          apiKey: process.env.FIREBASE_API_KEY,
+          authDomain: "chsttt2025.firebaseapp.com",
+          projectId: "chsttt2025",
+          storageBucket: "chsttt2025.appspot.com",
+          messagingSenderId: "443341451267",
+          appId: "1:443341451267:web:bd5e27ed4f36e2a632de36"
       };
 
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    })
-    .catch(error => console.error("Failed to load environment variables:", error));
+      // ✅ Ensure Firebase is Initialized
+      if (!firebase.apps.length) {
+          firebase.initializeApp(firebaseConfig);
+      }
+
+      window.auth = firebase.auth(); // ✅ Make Firebase Auth Globally Accessible
+
+      console.log("Firebase Initialized Successfully!");
+  });
 </script>
-<hr />
-<div id="step-2-create-the-login-form" class="section level2">
-<h2><strong>🛠 Step 2: Create the Login Form</strong></h2>
-<p>This is the correct way to embed the login form inside an R Markdown
-document.</p>
 <h2>
 Login
 </h2>
@@ -2675,15 +2661,23 @@ Login
 <button onclick="login()">Login</button></p>
 <script>
     function login() {
+        console.log("Login button clicked");
+
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
-        firebase.auth().signInWithEmailAndPassword(email, password)
+        if (!window.auth) {
+            console.error("Firebase Auth is not initialized!");
+            return;
+        }
+
+        window.auth.signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
                 alert("Login successful!");
+                console.log("Logged in as:", user.email);
 
-                // Redirect users based on email
+                // ✅ Redirect users based on email
                 if (user.email === "kgroe@iastate.edu") {
                     window.location.href = "Modules.html";
                 } else {
@@ -2692,10 +2686,10 @@ Login
             })
             .catch((error) => {
                 alert("Error: " + error.message);
+                console.error("Login error:", error);
             });
     }
 </script>
-</div>
 </div>
 
 

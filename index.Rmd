@@ -12,11 +12,10 @@ output:
 
 ---
 
-<!-- Navigation Bar -->
 <nav>
   <a href="index.html">Home</a>
   <a href="contact.html">Contact</a>
-  <a href="Login.html">Log In</a>
+  <a href="LogIn.html">Log In</a>
 </nav>
 
 
@@ -25,15 +24,12 @@ output:
 # Welcome to My Website
 
 
-This is a static website created using R Markdown.  
+This is a static website that I created.
+<br>This is where we could say "please log in to view/download content"
+<br> this is a public website so this is where we could have a brief description or some pictures or something like that
+<br><br> I made this site very very quickly as a proof of concept.  I would spend much more time making the end product look nicer 
+<br> please notice the Frivicon (the icon on the web browser tab) I am quite proud of that part :) 
 
-<p> 
-## Modules -  
-- [Module 1](Module1.html)
-- [Module 2](Module1.html)
-- [Module 3](Module1.html)
-- [Module 4](Module1.html)
-- [Module 5](Module1.html)
 
 
 

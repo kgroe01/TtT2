@@ -23,8 +23,11 @@ output:
 
 I am pretty sure that we could track when teachers view/download material
 
-<img src="drones.png" alt="Table of Concepts and Performance Objectives" width="800">
+<img src="drones.png" alt="Table of Concepts and Performance Objectives" width="600">
 
 
-
-- [Lesson 1 Teacher Notes](Random PDF.pdf)
+- [Module 3 Teacher Notes](Random PDF.pdf)
+<p>
+- [Lesson 1 Slides](RandomSlides.pdf)
+- [Lesson 1 Student Worksheet](Random PDF.pdf) 
+- [Lesson 1 Student Worksheet Key](Random PDF.pdf)  

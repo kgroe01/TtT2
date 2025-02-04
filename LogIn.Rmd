@@ -9,7 +9,7 @@ output:
     theme: null
     toc: false
     includes:
-      in_header: Friv.html
+      in_header: docs/Friv.html
 ---
 
 <nav>
@@ -24,6 +24,8 @@ I am 80% sure that I could figure out how to have each teacher have a username a
 That way only the teachers that have gone through the training will have access to the material.
 
 Once they log in, they will be automatically brought to [this page.](Modules.html)
+
+test
 
 <!-- Load Auth0 and authentication script -->
 <script src="https://cdn.auth0.com/js/auth0-spa-js/1.22/auth0-spa-js.production.js"></script>

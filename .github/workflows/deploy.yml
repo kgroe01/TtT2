@@ -1,5 +1,9 @@
 name: Deploy R Markdown Site to GitHub Pages
 
+env:
+  FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+
+
 on:
   push:
     branches:

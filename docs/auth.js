@@ -38,7 +38,7 @@ async function checkAuth() {
 
       // ✅ Redirect users based on their email
       if (user.email === "kgroe@iastate.edu" || user.email === "testsub2001ttt@gmail.com") {
-        window.location.href = "docs/Modules.html";
+        window.location.href = "https://r-graph-gallery.com/";
       } else {
         window.location.href = "index.html"; // Default page for non-matching users
       }

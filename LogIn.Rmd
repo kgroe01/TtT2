@@ -9,7 +9,7 @@ output:
     theme: null
     toc: false
     includes:
-      in_header: docs/Friv.html
+      in_header: "docs/Friv.html"
 ---
 
 <nav>

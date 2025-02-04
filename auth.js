@@ -1,4 +1,3 @@
-// Initialize Auth0 client
 let auth0Client = null;
 
 async function initializeAuth() {
@@ -7,30 +6,34 @@ async function initializeAuth() {
         client_id: R6UUnaSFBSUGYEIqOfPSHM94vrkigpQP,
         redirect_uri: window.location.origin
     });
+
+    console.log("Auth0 initialized");
     checkAuth();
 }
 
-// Function to log in
+// Login function
 async function login() {
+    console.log("Login button clicked");
     await auth0Client.loginWithRedirect();
 }
 
-// Function to log out
+// Logout function
 async function logout() {
+    console.log("Logout button clicked");
     await auth0Client.logout({ returnTo: window.location.origin });
 }
 
-// Function to check if user is logged in and redirect them
+// Check if user is logged in and restrict access
 async function checkAuth() {
     const isAuthenticated = await auth0Client.isAuthenticated();
 
     if (isAuthenticated) {
         const user = await auth0Client.getUser();
-        
-        console.log("User:", user);
+        console.log("User authenticated:", user);
 
-        // Redirect only if it's a teacher's email
-        const allowedEmails = ["kgroe@iastate.edu", "teacher2@example.com"];
+        // Allowed teacher emails
+        const allowedEmails = ["teacher1@example.com", "teacher2@example.com"];
+
         if (allowedEmails.includes(user.email)) {
             window.location.href = "Modules.html";
         } else {
@@ -40,11 +43,11 @@ async function checkAuth() {
     }
 }
 
-// Handle login redirect callback
+// Handle login redirect
 async function handleAuthCallback() {
     await auth0Client.handleRedirectCallback();
     checkAuth();
 }
 
-// Initialize authentication on page load
+// Initialize authentication when page loads
 window.onload = initializeAuth;

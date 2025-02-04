@@ -1,0 +1,33 @@
+---
+title: "Login"
+author: "Katelyn Groe"
+date: "2025-01-21"
+output_dir: "docs"
+output:
+  html_document:
+    css: style.css
+    theme: null
+    toc: false
+    includes:
+      in_header: Friv.html
+---
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+# Log in Page
+
+I am 80% sure that I could figure out how to have each teacher have a username and password.  
+
+That way only the teachers that have gone through the training will have access to the material.
+
+Once they log in, they will be automatically brought to [this page.](Modules.html)
+
+<!-- Load Auth0 and authentication script -->
+<script src="https://cdn.auth0.com/js/auth0-spa-js/1.22/auth0-spa-js.production.js"></script>
+<script src="auth.js"></script>
+
+<button onclick="login()">Login</button>
+<button onclick="logout()">Logout</button>

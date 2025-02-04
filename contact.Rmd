@@ -1,0 +1,31 @@
+---
+title: "Contact"
+author: "Katelyn Groe"
+date: "2025-01-22"
+output:
+  html_document:
+    css: style.css
+    theme: null
+    toc: false
+    includes:
+      in_header: Friv.html
+    
+---
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="contact.html">Contact</a>
+  <a href="LogIn.html">Log In</a>
+</nav>
+
+<p style="margin-bottom: 20px;">
+
+# Contact Us
+<br>
+
+## This is where any contact information would be
+<br> 
+
+### Katelyn Groe 
+Email: Kgroe@iastate.edu
+

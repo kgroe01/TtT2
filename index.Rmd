@@ -1,0 +1,36 @@
+---
+title: "Title Page"
+author: "Katelyn Groe"
+date: "2025-01-21"
+output:
+  html_document:
+    css: style.css
+    theme: null
+    toc: false
+    includes:
+      in_header: Friv.html
+
+---
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="contact.html">Contact</a>
+  <a href="LogIn.html">Log In</a>
+</nav>
+
+
+<p style="margin-bottom: 20px;">
+
+# Welcome to My Website
+
+
+This is a static website that I created.
+<br>This is where we could say "please log in to view/download content"
+<br> this is a public website so this is where we could have a brief description or some pictures or something like that
+<br><br> I made this site very very quickly as a proof of concept.  I would spend much more time making the end product look nicer 
+<br> please notice the Frivicon (the icon on the web browser tab) I am quite proud of that part :) 
+
+
+
+
+

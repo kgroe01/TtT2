@@ -8,13 +8,13 @@ output:
     theme: null
     toc: false
     includes:
-      in_header: Friv.html
+      in_header: docs/Friv.html
 
 ---
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="contact.html">Contact</a>
+  <a href="docs/index.html">Home</a>
+  <a href="docs/contact.html">Contact</a>
 </nav>
 
 

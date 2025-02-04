@@ -14,7 +14,7 @@ output:
 <nav>
   <a href="index.html">Home</a>
   <a href="contact.html">Contact</a>
-  <a href="Modules.html">Modules</a>
+  <a href="Modules.html">Units</a>
 </nav>
 
 <p style="margin-bottom: 20px;">
@@ -25,7 +25,7 @@ I am pretty sure that we could track when teachers view/download material
 
 <img src="Basics.png" alt="Table of Concepts and Performance Objectives" width="600">
 
-## Module 1 - Ag Machinery
+## Module 1 - Ag Machinery 
 
 - [Module 1 Teacher Notes](Random PDF.pdf)
 <p>

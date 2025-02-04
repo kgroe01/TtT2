@@ -3,7 +3,7 @@ const auth0 = new Auth0Client({
   client_id: "R6UUnaSFBSUGYEIqOfPSHM94vrkigpQP",
   cacheLocation: "localstorage",
   authorizationParams: {
-    redirect_uri: "https://kgroe01.github.io/TtT2/" // Matches Auth0 Allowed Callback URL
+    redirect_uri: "https://kgroe01.github.io/TtT2/Login.html" // MUST MATCH Auth0 Allowed Callback URL
   }
 });
 
@@ -39,7 +39,7 @@ async function checkAuth() {
       // ✅ Redirect users to different pages based on their email
       const userRedirects = {
         "kgroe@iastate.edu": "https://kgroe01.github.io/TtT2/Login.html",
-        "testsub2001ttt@gmail.com": "https://kgroe01.github.io/TtT2/Modules",
+        "testsub2001ttt@gmail.com": "https://kgroe01.github.io/TtT2/Modules.html",
       };
 
       // ✅ Redirect to a specific page if the user's email is in the list

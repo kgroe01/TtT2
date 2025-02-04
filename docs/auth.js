@@ -1,9 +1,9 @@
 const auth0 = new Auth0Client({
-  domain: "dev-0xxzru015pu8i5d0.us.auth0.com", // Your Auth0 domain
-  client_id: "R6UUnaSFBSUGYEIqOfPSHM94vrkigpQP", // Your Auth0 client ID
+  domain: "dev-0xxzru015pu8i5d0.us.auth0.com",
+  client_id: "R6UUnaSFBSUGYEIqOfPSHM94vrkigpQP",
   cacheLocation: "localstorage",
   authorizationParams: {
-    redirect_uri: "https://kgroe01.github.io/Login.html" // Ensure this matches Allowed Callback URLs in Auth0
+    redirect_uri: "https://kgroe01.github.io/TtT2/" // Matches Auth0 Allowed Callback URL
   }
 });
 
@@ -21,7 +21,7 @@ async function checkAuth() {
   try {
     const query = window.location.search;
 
-    // ✅ Only handle redirect callback if there's an authentication response
+    // ✅ Handle redirect callback only if necessary
     if (query.includes("code=") || query.includes("error=")) {
       await auth0.handleRedirectCallback();
       window.history.replaceState({}, document.title, window.location.pathname); // Removes query params from URL
@@ -36,11 +36,17 @@ async function checkAuth() {
       document.getElementById("login").style.display = "none";
       document.getElementById("logout").style.display = "block";
 
-      // ✅ Redirect users based on their email
-      if (user.email === "kgroe@iastate.edu" || user.email === "testsub2001ttt@gmail.com") {
-        window.location.href = "https://r-graph-gallery.com/";
+      // ✅ Redirect users to different pages based on their email
+      const userRedirects = {
+        "kgroe@iastate.edu": "https://kgroe01.github.io/TtT2/Login.html",
+        "testsub2001ttt@gmail.com": "https://kgroe01.github.io/TtT2/Modules",
+      };
+
+      // ✅ Redirect to a specific page if the user's email is in the list
+      if (user.email in userRedirects) {
+        window.location.href = userRedirects[user.email];
       } else {
-        window.location.href = "index.html"; // Default page for non-matching users
+        window.location.href = "https://kgroe01.github.io/TtT2/"; // Default page if email is not listed
       }
     }
   } catch (error) {

@@ -2635,19 +2635,32 @@ export { FirebaseError, SDK_VERSION, DEFAULT_ENTRY_NAME as _DEFAULT_ENTRY_NAME, 
 //# sourceMappingURL=firebase-auth.js.map
 </script>
 <script>
-  // Firebase Configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyB35ESzfUiW26hrB25f7gUmddWpe3dBtKA",
-    authDomain: "chsttt2025.firebaseapp.com",
-    projectId: "chsttt2025",
-    storageBucket: "chsttt2025.firebasestorage.app",
-    messagingSenderId: "443341451267",
-    appId: "1:443341451267:web:bd5e27ed4f36e2a632de36",
-    measurementId: "G-591KEJDWSD"
-  };
+  // Load .env file
+  fetch(".env")
+    .then(response => response.text())
+    .then(text => {
+      const env = {};
+      text.split("\\n").forEach(line => {
+        const [key, value] = line.split("=");
+        if (key && value) {
+          env[key.trim()] = value.trim();
+        }
+      });
 
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+      // Firebase Configuration using Environment Variables
+      const firebaseConfig = {
+        apiKey: env.FIREBASE_API_KEY,
+        authDomain: env.FIREBASE_AUTH_DOMAIN,
+        projectId: env.FIREBASE_PROJECT_ID,
+        storageBucket: env.FIREBASE_STORAGE_BUCKET,
+        messagingSenderId: env.FIREBASE_MESSAGING_SENDER_ID,
+        appId: env.FIREBASE_APP_ID
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    })
+    .catch(error => console.error("Failed to load environment variables:", error));
 </script>
 <hr />
 <div id="step-2-create-the-login-form" class="section level2">

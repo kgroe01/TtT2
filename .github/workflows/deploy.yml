@@ -1,0 +1,48 @@
+name: Deploy R Markdown Site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Change if your default branch is not 'main'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install R and Dependencies
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.2.0'
+
+      - name: Install Pandoc
+        uses: r-lib/actions/setup-pandoc@v2
+
+      - name: Install R Packages
+        run: |
+          Rscript -e 'install.packages(c("rmarkdown", "knitr", "markdown"))'
+
+      - name: Render R Markdown
+        run: |
+          Rscript -e 'rmarkdown::render_site()'
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages  # This is where the site will be deployed
+          folder: _site     # Adjust if your output directory is different
+
+      - name: Deploy Firebase Config
+        run: |
+          echo "apiKey=${{ secrets.FIREBASE_API_KEY }}" > firebase-config.json
+          cat firebase-config.json
+
+      - name: Deploy to Firebase Hosting (Optional)
+        run: |
+          npm install -g firebase-tools
+          firebase deploy --token "${{ secrets.FIREBASE_API_KEY }}"
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_API_KEY }}

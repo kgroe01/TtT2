@@ -4,7 +4,7 @@ const auth0 = new Auth0Client({
   client_id: "R6UUnaSFBSUGYEIqOfPSHM94vrkigpQP", // Replace with your client ID
   cacheLocation: "localstorage",
   authorizationParams: {
-    redirect_uri: "https://kgroe01.github.io/TtT2/Login.html", // ✅ Must match Allowed Callback URL in Auth0
+    redirect_uri: https://kgroe01.github.io/TtT2/Login.html, // ✅ Must match Allowed Callback URL in Auth0
     response_mode: "query"  // Ensures URL parameters are handled correctly
   }
 });

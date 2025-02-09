@@ -1,27 +1,32 @@
+// ✅ Initialize Auth0 Client
 const auth0 = new Auth0Client({
-  domain: "dev-0xxzru015pu8i5d0.us.auth0.com",
-  client_id: "R6UUnaSFBSUGYEIqOfPSHM94vrkigpQP",
+  domain: "dev-0xxzru015pu8i5d0.us.auth0.com",  // Replace with your domain
+  client_id: "R6UUnaSFBSUGYEIqOfPSHM94vrkigpQP", // Replace with your client ID
   cacheLocation: "localstorage",
   authorizationParams: {
-    redirectUri: "https://kgroe01.github.io/TtT2/Login.html" // MUST MATCH Auth0 Allowed Callback URL
+    redirect_uri: "https://kgroe01.github.io/TtT2/Login.html", // ✅ Must match Allowed Callback URL in Auth0
+    response_mode: "query"  // Ensures URL parameters are handled correctly
   }
 });
 
+// ✅ Function to Log In
 async function login() {
   await auth0.loginWithRedirect();
 }
 
+// ✅ Function to Log Out
 async function logout() {
   await auth0.logout({
-    returnTo: "https://kgroe01.github.io/"
+    returnTo: "https://kgroe01.github.io/" // ✅ Ensure this matches Allowed Logout URLs in Auth0
   });
 }
 
+// ✅ Function to Check Authentication & Redirect if Needed
 async function checkAuth() {
   try {
     const query = window.location.search;
 
-    // ✅ Handle redirect callback only if necessary
+    // ✅ Handle redirect callback before checking authentication
     if (query.includes("code=") || query.includes("error=")) {
       await auth0.handleRedirectCallback();
       window.history.replaceState({}, document.title, window.location.pathname); // Removes query params from URL
@@ -31,22 +36,22 @@ async function checkAuth() {
 
     if (isAuthenticated) {
       const user = await auth0.getUser();
-      console.log("User Info:", user); // Debugging: View user details in console
+      console.log("User Info:", user); // ✅ Debugging - View user details in console
 
       document.getElementById("login").style.display = "none";
       document.getElementById("logout").style.display = "block";
 
-      // ✅ Redirect users to different pages based on their email
+      // ✅ Redirect users based on their email
       const userRedirects = {
         "kgroe@iastate.edu": "https://kgroe01.github.io/TtT2/Login.html",
         "testsub2001ttt@gmail.com": "https://kgroe01.github.io/TtT2/Modules.html",
       };
 
-      // ✅ Redirect to a specific page if the user's email is in the list
+      // ✅ Redirect if the user’s email is in the list
       if (user.email in userRedirects) {
         window.location.href = userRedirects[user.email];
       } else {
-        window.location.href = "https://kgroe01.github.io/TtT2/"; // Default page if email is not listed
+        window.location.href = "https://kgroe01.github.io/TtT2/"; // Default page
       }
     }
   } catch (error) {
@@ -54,5 +59,5 @@ async function checkAuth() {
   }
 }
 
-// ✅ Run `checkAuth()` on page load
+// ✅ Run `checkAuth()` when the page loads
 window.onload = checkAuth;

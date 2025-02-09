@@ -32,3 +32,11 @@ test
 
 <button onclick="login()">Login</button>
 <button onclick="logout()">Logout</button>
+
+## Explore the National Map Viewer
+
+The interactive map below shows geographic data from the **USGS National Map Viewer**:
+
+
+<iframe width="300" height="200" frameborder="0" scrolling="no" allowfullscreen src="https://apps.nationalmap.gov/viewer/viewer/index.html?extent=-11289361.8837%2C4744408.5349%2C-9438974.303%2C5517339.7649%2C102100"></iframe>
+
